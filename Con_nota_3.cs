@@ -215,12 +215,12 @@ namespace Connota3
                             registroABuscar = Convert.ToInt32(Console.ReadLine());
                             if(registroABuscar<=contadorFichas)
                             {
-                                Console.WriteLine("Nombre: {0}", fichas[registroABuscar - 1].nombre);
-                                Console.WriteLine("Email: {0} ", fichas[registroABuscar - 1].email);
-                                Console.WriteLine("Año de nacimiento: {0}", fichas[registroABuscar - 1].anyoNacimiento);
-                                Console.WriteLine("Aficiones: {0}", fichas[registroABuscar - 1].aficiones);
-                                Console.WriteLine("Estatura en metros: {0}", fichas[registroABuscar - 1].estatura);
-                                Console.WriteLine("Comentarios: {0}", fichas[registroABuscar - 1].comentarios);
+                                Console.WriteLine("Nombre:**{0}**", fichas[registroABuscar - 1].nombre);
+                                Console.WriteLine("Email:**{0}** ", fichas[registroABuscar - 1].email);
+                                Console.WriteLine("Año de nacimiento:**{0}**", fichas[registroABuscar - 1].anyoNacimiento);
+                                Console.WriteLine("Aficiones:**{0}**", fichas[registroABuscar - 1].aficiones);
+                                Console.WriteLine("Estatura en metros:**{0}**", fichas[registroABuscar - 1].estatura);
+                                Console.WriteLine("Comentarios:**{0}**", fichas[registroABuscar - 1].comentarios);
                             }
                             else
                             {
@@ -325,7 +325,7 @@ namespace Connota3
                         {
                             for (int i = 0; i <contadorFichas-1; i++)
                             {
-                                for (int j = 0; j < contadorFichas; j++)
+                                for (int j = 1; j < contadorFichas; j++)
                                 {
                                     if (fichas[i].nombre.CompareTo(fichas[j].nombre)>0)
                                     {
@@ -393,9 +393,17 @@ namespace Connota3
                     se guardará un 0 en su lugar. Si algún año de nacimiento es anterior a 1850 o posterior a 2100, se guardará como 0.*/
                     case '8':
                         {
-                            for (int i = 0; i < contadorFichas; i++)
+
+                            for (int i = 0; i <contadorFichas; i++)
                             {
-                                if((fichas[i].estatura < 0) || ( fichas[i].estatura >= 3))
+                                string sin3espacios = fichas[i].nombre.Replace("   ", " ");
+                                fichas[i].nombre = sin3espacios;
+                                string sin2espacios = fichas[i].nombre.Replace("  ", " ");
+                                fichas[i].nombre = sin2espacios;
+                                fichas[i].nombre = fichas[i].nombre.TrimStart();
+                                fichas[i].nombre = fichas[i].nombre.TrimEnd();
+
+                                if ((fichas[i].estatura < 0) || ( fichas[i].estatura >= 3))
                                 {
                                     fichas[i].estatura = 0;
                                 }
