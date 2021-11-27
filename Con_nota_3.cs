@@ -92,7 +92,7 @@ namespace Connota3
                             Console.WriteLine("Escribe el texto a buscar.");
                             textoABuscar= Console.ReadLine();
                             textoABuscarMayusculas = textoABuscar.ToUpper();
-                            for (int i = 0; i <contadorFichas; i++)
+                            for (int i = 0; i <=contadorFichas-1; i++)
                             {
                                 fichas[i].nombre = 
                                     fichas[i].nombre.ToUpper();
@@ -131,7 +131,7 @@ namespace Connota3
                         {
                             Console.WriteLine("Escribe el numero de registro.");
                             registroABuscar = Convert.ToInt32(Console.ReadLine());
-                            if(registroABuscar<=contadorFichas)
+                            if( registroABuscar <= contadorFichas )
                             {
                                 Console.WriteLine("Nombre:**{0}**",
                                     fichas[registroABuscar - 1].nombre);
@@ -157,7 +157,7 @@ namespace Connota3
                         {
                             Console.WriteLine("Escribe numero de registro a buscar.");
                             registroABuscar = Convert.ToInt32(Console.ReadLine());
-                            if (registroABuscar <=contadorFichas)
+                            if ( registroABuscar <= contadorFichas )
                             {
                                 Console.WriteLine("Nombre anterior: {0}", 
                                     fichas[registroABuscar - 1].nombre);
@@ -224,7 +224,7 @@ namespace Connota3
                         {
                             Console.WriteLine("Escribe numero de registro a eliminar.");
                             registroABuscar = Convert.ToInt32(Console.ReadLine());
-                            if (registroABuscar < contadorFichas)
+                            if ( registroABuscar <= contadorFichas )
                             {
                                 Console.WriteLine("El registro que se eliminara" +
                                     " es el: {0}", registroABuscar);
@@ -235,7 +235,7 @@ namespace Connota3
                                 ordenDada = Console.ReadLine();
                                 if (ordenDada=="")
                                 {
-                                    for (int i = registroABuscar-1; i <= contadorFichas; i++)
+                                    for (int i = registroABuscar-1; i < contadorFichas; i++)
                                     {
                                         fichas[i].nombre = fichas[i+1].nombre;
                                         fichas[i].email = fichas[i+1].email;
@@ -253,12 +253,12 @@ namespace Connota3
                             Console.WriteLine();
                         };break;
                     //6 - Ordenar los datos alfabéticamente.
-                    //He usado el intercambio directo.
+                    //Ordenacion por intercambio directo.
                     case '6':  
                         {
-                            for (int i = 0; i <contadorFichas-1; i++)
+                            for (int i = 0; i < contadorFichas-1; i++)
                             {
-                                for (int j = 1; j < contadorFichas; j++)
+                                for (int j = i+1; j < contadorFichas; j++)
                                 {
                                     if (fichas[i].nombre.CompareTo(fichas[j].nombre)>0)
                                     {
@@ -298,7 +298,7 @@ namespace Connota3
                             Console.WriteLine("La cantidad de contactos totales" +
                                 " guardados es: {0}", contadorFichas);
                             //buscar fichas con anyo 0 y crear un total
-                            for (int i = 0; i <contadorFichas; i++)
+                            for (int i = 0; i < contadorFichas ; i++)
                             {
                                 if (fichas[i].anyoNacimiento != 0)
                                 {
@@ -323,7 +323,7 @@ namespace Connota3
                     
                     case '8'://Corregier errores frecuentes.
                         {
-                            for (int i = 0; i <contadorFichas; i++)
+                            for (int i = 0; i < contadorFichas; i++)
                             {
                                 string sin3espacios = fichas[i].nombre.Replace("   ", " ");
                                 fichas[i].nombre = sin3espacios;
@@ -379,6 +379,5 @@ namespace Connota3
             }
             while (salir == false);
         }
-       
     }
 }
