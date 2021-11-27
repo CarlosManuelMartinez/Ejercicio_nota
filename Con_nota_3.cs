@@ -1,4 +1,6 @@
 ﻿//Carlos Manuel Martinez Pomares.
+//Ejercicio con nota Tema 4
+//27_11_2021
 
 using System;
 
@@ -330,30 +332,26 @@ namespace Connota3
                                 fichas[i].nombre = sin3espacios;
                                 string sin2espacios = fichas[i].nombre.Replace("  ", " ");
                                 fichas[i].nombre = sin2espacios;
-                                fichas[i].nombre = fichas[i].nombre.TrimStart();
-                                fichas[i].nombre = fichas[i].nombre.TrimEnd();
+                                fichas[i].nombre = fichas[i].nombre.Trim();
 
                                 sin3espacios = fichas[i].email.Replace("   ", " ");
                                 fichas[i].email = sin3espacios;
                                 sin2espacios = fichas[i].email.Replace("  ", " ");
                                 string sinespacios = fichas[i].email.Replace(" ", "");
                                 fichas[i].email = sinespacios;
-                                fichas[i].email = fichas[i].email.TrimStart();
-                                fichas[i].email = fichas[i].email.TrimEnd();
-
+                                fichas[i].email = fichas[i].email.Trim();
+                                
                                 sin3espacios = fichas[i].comentarios.Replace("   ", " ");
                                 fichas[i].comentarios = sin3espacios;
                                 sin2espacios = fichas[i].comentarios.Replace("  ", " ");
                                 fichas[i].comentarios = sin2espacios;
-                                fichas[i].comentarios = fichas[i].comentarios.TrimStart();
-                                fichas[i].comentarios = fichas[i].comentarios.TrimEnd();
+                                fichas[i].comentarios = fichas[i].comentarios.Trim();
 
                                 sin3espacios = fichas[i].aficiones.Replace("   ", " ");
                                 fichas[i].aficiones = sin3espacios;
                                 sin2espacios = fichas[i].aficiones.Replace("  ", " ");
                                 fichas[i].aficiones = sin2espacios;
-                                fichas[i].aficiones = fichas[i].aficiones.TrimStart();
-                                fichas[i].aficiones = fichas[i].aficiones.TrimEnd();
+                                fichas[i].aficiones = fichas[i].aficiones.Trim();
 
                                 if ((fichas[i].estatura < 0) || ( fichas[i].estatura >= 3))
                                 {
