@@ -253,6 +253,7 @@ namespace Connota3
                             Console.WriteLine();
                         };break;
                     //6 - Ordenar los datos alfabéticamente.
+                    //He usado el intercambio directo.
                     case '6':  
                         {
                             for (int i = 0; i <contadorFichas-1; i++)
