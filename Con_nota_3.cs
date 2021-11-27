@@ -30,6 +30,7 @@ namespace Connota3
             do
             {
                 Console.WriteLine("Elige un menu de los siguientes.");
+                Console.WriteLine();
                 Console.WriteLine("1. Añadir datos de un contacto.");
                 Console.WriteLine("2. Buscar entre los contactos existentes.");
                 Console.WriteLine("3. Ver detalles de un contacto.");
@@ -363,9 +364,9 @@ namespace Connota3
                                 {
                                     fichas[i].anyoNacimiento = 0;
                                 }
-                                Console.WriteLine("Errores corregidos!!");
-                                Console.WriteLine();
                             }
+                            Console.WriteLine("Errores corregidos!!");
+                            Console.WriteLine();
                         }
                         ; break;
                     case 's':
