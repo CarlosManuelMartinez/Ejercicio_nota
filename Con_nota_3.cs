@@ -368,7 +368,7 @@ namespace Connota3
                             }
                         }
                         ; break;
-                    case 's':;break;
+                    case 's':
                     case 'S':
                         {
                             salir = true;
